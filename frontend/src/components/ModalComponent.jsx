@@ -39,7 +39,7 @@ const ModalComponent = ({ taskToEdit, onClose, onTaskUpdated }) => {
     if (taskToEdit) {
       setTitle(taskToEdit.title);
       setDescription(taskToEdit.description);
-      setDate(taskToEdit.deadline ? dayjs(taskToEdit.deadline) : null); 
+      setDate(taskToEdit.deadline ? dayjs(taskToEdit.deadline) : null);
       setOpen(true);
     }
   }, [taskToEdit]);
@@ -68,7 +68,7 @@ const ModalComponent = ({ taskToEdit, onClose, onTaskUpdated }) => {
     const taskData = {
       title,
       description,
-      deadline: date ? date.toISOString() : null, 
+      deadline: date ? date.toISOString() : null,
     };
 
     try {
@@ -94,11 +94,11 @@ const ModalComponent = ({ taskToEdit, onClose, onTaskUpdated }) => {
 
   return (
     <div>
-      <FontAwesomeIcon 
-        icon={faPlus} 
-        onClick={() => setOpen(true)} 
-        className='button' 
-        style={{ cursor: 'pointer' }} 
+      <FontAwesomeIcon
+        icon={faPlus}
+        onClick={() => setOpen(true)}
+        className='button'
+        style={{ cursor: 'pointer' }}
       />
       <Modal open={open} onClose={handleClose} aria-labelledby="modal-title" aria-describedby="modal-description">
         <Box sx={styling}>
@@ -144,7 +144,8 @@ const ModalComponent = ({ taskToEdit, onClose, onTaskUpdated }) => {
                           label="Deadline"
                           value={date}
                           onChange={handleDateChange}
-                          renderInput={(params) => <TextField {...params} />}
+                          slots={{ textField: TextField }}
+
                         />
                       </LocalizationProvider>
                     </Grid>
