@@ -34,7 +34,7 @@ const SignIn = () => {
                 email,
                 password,
             };
-            const response = await axios.post("http://localhost:3200/login", loginData);
+            const response = await axios.post("https://kakushin-assignment.vercel.app/login", loginData);
             localStorage.setItem('token', response.data.token);
             dispatch(setLoggedIn()); 
             localStorage.setItem('isLoggedIn', 'true');

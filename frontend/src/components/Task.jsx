@@ -16,7 +16,7 @@ const Task = ({ task, updateTaskLists, openModal }) => {
 
   const handleTask = async () => {
     try {
-      await axios.patch(`http://localhost:3200/tasks/${task._id}`, {
+      await axios.patch(`https://kakushin-assignment.vercel.app/tasks/${task._id}`, {
         completed: !complete,
       });
       setComplete(prev => !prev);
@@ -28,7 +28,7 @@ const Task = ({ task, updateTaskLists, openModal }) => {
 
   const handleFav = async () => {
     try {
-      await axios.patch(`http://localhost:3200/tasks/${task._id}`, {
+      await axios.patch(`https://kakushin-assignment.vercel.app/tasks/${task._id}`, {
         favorite: !imp,
       });
       setImp(prev => !prev);
@@ -44,7 +44,7 @@ const Task = ({ task, updateTaskLists, openModal }) => {
 
   const handleDelete = async () => {
     try {
-      await axios.delete(`http://localhost:3200/tasks/${task._id}`);
+      await axios.delete(`https://kakushin-assignment.vercel.app/tasks/${task._id}`);
       updateTaskLists();
     } catch (error) {
       console.error('Error deleting task:', error);

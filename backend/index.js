@@ -14,9 +14,9 @@ app.use(express.json());
 
 
 
-app.get('/', (req, res) => {
-    res.send("first project");
-});
+// app.get('/', (req, res) => {
+//     res.send("first project");
+// });
 
 
 app.use('/', Taskroutes);

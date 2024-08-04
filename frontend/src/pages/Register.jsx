@@ -36,7 +36,7 @@ export default function SignUp() {
         email,
         password
       };
-      await axios.post('http://localhost:3200/register', requestPayload);
+      await axios.post('https://kakushin-assignment.vercel.app/register', requestPayload);
       alert('Registered successfully');
       navigate('/Login');
     } catch (error) {

@@ -39,7 +39,7 @@ const ModalComponent = ({ taskToEdit, onClose, onTaskUpdated }) => {
     if (taskToEdit) {
       setTitle(taskToEdit.title);
       setDescription(taskToEdit.description);
-      setDate(taskToEdit.deadline ? dayjs(taskToEdit.deadline) : null); // Convert to dayjs
+      setDate(taskToEdit.deadline ? dayjs(taskToEdit.deadline) : null); 
       setOpen(true);
     }
   }, [taskToEdit]);
@@ -68,15 +68,15 @@ const ModalComponent = ({ taskToEdit, onClose, onTaskUpdated }) => {
     const taskData = {
       title,
       description,
-      deadline: date ? date.toISOString() : null, // Convert to ISO string
+      deadline: date ? date.toISOString() : null, 
     };
 
     try {
       let response;
       if (taskToEdit) {
-        response = await axios.patch(`http://localhost:3200/tasks/${taskToEdit._id}`, taskData);
+        response = await axios.patch(`https://kakushin-assignment.vercel.app/${taskToEdit._id}`, taskData);
       } else {
-        response = await axios.post('http://localhost:3200/tasks', taskData);
+        response = await axios.post('https://kakushin-assignment.vercel.app/tasks', taskData);
       }
       // console.log('Task created/updated:', response.data);
       handleClose();
@@ -98,7 +98,7 @@ const ModalComponent = ({ taskToEdit, onClose, onTaskUpdated }) => {
         icon={faPlus} 
         onClick={() => setOpen(true)} 
         className='button' 
-        style={{ cursor: 'pointer' }} // Ensure cursor pointer is visible
+        style={{ cursor: 'pointer' }} 
       />
       <Modal open={open} onClose={handleClose} aria-labelledby="modal-title" aria-describedby="modal-description">
         <Box sx={styling}>

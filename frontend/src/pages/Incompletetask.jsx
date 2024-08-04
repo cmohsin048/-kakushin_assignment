@@ -10,7 +10,7 @@ const IncompleteTask = () => {
 
   const fetchTasks = async () => {
     try {
-      const response = await axios.get('http://localhost:3200/tasks');
+      const response = await axios.get('https://kakushin-assignment.vercel.app/tasks');
       setTasks(response.data.filter(task => !task.completed));
     } catch (error) {
       console.error('Error fetching tasks:', error);
