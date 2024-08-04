@@ -1,0 +1,220 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+:root {
+    --c1: #201E43;
+    --c2: #134B70;
+    --c3: #508C9B;
+    --c4: #EEEEEE;
+}
+
+/* .app{
+
+} */
+.main-task {
+    display: flex;
+    gap: 10px;
+    background: #1e1e1e;
+    height: 100vh;
+    padding: 10px;
+    color: white;
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    min-width: 15%;
+    padding: 20px;
+    border: 1px solid var(--c4);
+    justify-content: space-between;
+    height: 100%;
+    border-radius: 20px;
+}
+
+.user {
+    display: flex;
+    flex-direction: column;
+}
+
+.tasks {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.i {
+    text-decoration: none;
+    color: #EEEEEE;
+}
+
+.logout-button {
+    background: var(--c4);
+    border: none;
+    color: var(--c1);
+    padding: 10px 25px 10px 25px;
+    border-radius: 10px;
+    font-size: large;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+.display-task {
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    max-width: 100%;
+    width: 80%;
+    min-width: 60%;
+    background-color: #333;
+    border-radius: 10px;
+    padding: 50px;
+    /* min-height: 100vh; */
+    max-height: fit-content;
+    border: 1px solid var(--c4);
+}
+
+.all-tasks {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.task {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 10px 0px 0px;
+    flex: 1 1 200px;
+    gap: 10px;
+    overflow: hidden;
+    min-width: 250px;
+    max-width: 300px;
+    height: 200px;
+    background: #666;
+    padding: 20px;
+    border-radius: 20px;
+    height: fit-content;
+
+}
+
+.task p {
+    font-size: 13px;
+    overflow: hidden;
+}
+
+.task h3 {
+    padding-bottom: 5px;
+}
+
+.add-task {
+    display: flex;
+    width: 100%;
+    padding: 20px;
+    height: auto;
+    justify-content: end;
+    font-size: large;
+
+}
+
+.button {
+    background-color: #666;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.actions button {
+    background-color: #ce5858;
+    border: none;
+    padding: 5px 15px 5px 15px;
+    color: #EEEEEE;
+    font-size: large;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.sidebar .close-icon {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+  }
+
+.actions {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.crossham {
+    display: none;
+}
+
+#hamburger {
+    display: none;
+}
+
+
+@media (max-width: 800px) {
+    .sidebar {
+        transform: translateX(-200%);
+        transition: transform 0.5s ease;
+        max-width: 250px;
+    }
+
+    #hamburger {
+        display: block;
+    }
+
+    .crossham {
+        display: block;
+    }
+
+    .sidebar.open {
+        transform: translateX(0);
+        display: block;
+    }
+
+    .hamburger {
+        display: block;
+        cursor: pointer;
+        margin-left: 1rem;
+    }
+
+    .hamburger.hidden {
+        display: none;
+    }
+
+    .sidebar {
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 250px;
+        max-width: none;
+        height: auto;
+        display: block;
+
+        background: black;
+        border-right: none;
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+    }
+
+    .display-task {
+        width: 100%;
+    }
+
+    .body {
+        max-width: 100%;
+        padding: 20px;
+        flex-direction: column;
+    }
+
+    .header {
+        margin: 1.25rem 0 0 1rem;
+    }
+
+}
