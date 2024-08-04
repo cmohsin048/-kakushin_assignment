@@ -25,27 +25,25 @@ cd -kakushin_assignment
 
 
 **3. Install Dependencies**
-Frontend
+
+**Frontend**
 Navigate to the frontend folder and install the dependencies:
+"cd frontend"
+"npm install"
 
-cd frontend
-npm install
-Backend
+**Backend**
 Open a new terminal window, navigate to the backend folder, and install the dependencies:
-
-cd backend
-npm install
+"cd backend"
+"npm install"
 
 
 **4. Run the Project**
-Frontend
-In the frontend folder, run the development server:
 
+**Frontend**
+In the frontend folder, run the development server: "npm run dev"
 
-npm run dev
-Backend
-**In the backend folder, start the backend server:**
-node index.js
+**Backend**
+In the backend folder, start the backend server: "node index.js"
 
 
 
